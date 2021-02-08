@@ -1,0 +1,35 @@
+# версия docker-compose
+version: '3.8'
+
+# имя директории для хранения данных
+volumes:
+  postgres_data:
+
+# имена и описания контейнеров, которые должны быть развёрнуты
+services:
+  # описание контейнера db
+  db:
+    image: postgres:12.4
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+
+  web:
+    image: ndvg/yamdb:latest
+    restart: always
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+
+  web_nginx:
+    image: nginx
+    restart: always
+    volumes:
+      - ./static:/static
+      - ./nginx:/etc/nginx/conf.d/
+      - ./media:/media
+    ports:
+      - "80:80"
+
