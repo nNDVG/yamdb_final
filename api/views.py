@@ -1,14 +1,14 @@
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import filters, generics, mixins, permissions, viewsets
+from rest_framework import filters, generics, mixins, viewsets
 from rest_framework.decorators import action
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, ViewSetMixin
 
-from titles.models import Category, Comments, Genre, Review, Title, User
+from titles.models import Category, Genre, Review, Title, User
 
 from .filters import TitleFilter
 from .permissions import IsAdminOrReadOnly, IsSuperUserPermission
@@ -40,8 +40,9 @@ class UserViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-class CategoriesList(ViewSetMixin, mixins.ListModelMixin,
-                  mixins.CreateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+class CategoriesList(
+    ViewSetMixin, mixins.ListModelMixin, mixins.CreateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView
+):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [IsAdminOrReadOnly]
@@ -51,8 +52,9 @@ class CategoriesList(ViewSetMixin, mixins.ListModelMixin,
     lookup_field = 'slug'
 
 
-class GenresList(ViewSetMixin, mixins.ListModelMixin,
-                  mixins.CreateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+class GenresList(
+    ViewSetMixin, mixins.ListModelMixin, mixins.CreateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView
+):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
     permission_classes = [IsAdminOrReadOnly]
@@ -96,6 +98,7 @@ class CommentsViewSet(ModelViewSet):
     permission_classes = [IsSuperUserPermission]
     pagination_class = PageNumberPagination
 
+    @property
     def get_queryset(self):
         review = get_object_or_404(Review, pk=self.kwargs["review_id"])
         queryset = review.comments.all()
@@ -103,8 +106,3 @@ class CommentsViewSet(ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-
-
-
-
-

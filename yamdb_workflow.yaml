@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       script: |
-        flake8 --max-line-length=119 --exclude=tests,migrations .
+        flake8 --max-line-length=119 --exclude=tests,migrations,venv .
         pytest
 
   build:
