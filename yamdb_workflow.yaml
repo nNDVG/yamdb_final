@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       script: |
-        cd /home/ndvg/yamdb_final
-        flake8 .
+        flake8 --max-line-length=119 --exclude=tests,migrations .
         pytest
 
   build:
