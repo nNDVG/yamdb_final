@@ -1,1 +1,1 @@
-(https://github.com/actions/yamdb_final/workflows/.github/workflows/yamdb_workflow.yml/badge.svg)
+(https://github.com/nNDVG/yamdb_final/workflows/yamdb_workflow/badge.svg)
