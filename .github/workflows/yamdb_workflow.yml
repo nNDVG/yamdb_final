@@ -3,7 +3,6 @@ name: CI
 on: [push]
 
 jobs:
-  if: github.ref == 'refs/heads/master'
   tests:
     runs-on: ubuntu-latest
     steps:
@@ -60,7 +59,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             cd ${{ env.PROJECT_ROOT }}
-            sudo docker pull serg733/yamdb_final_web:latest
+            sudo docker pull ndvg/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             sudo docker-compose up -d
