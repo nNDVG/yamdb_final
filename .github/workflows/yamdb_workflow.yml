@@ -35,6 +35,8 @@ jobs:
           tags: ndvg/yamdb_final:latest
 
   deploy:
+    env:
+      PROJECT_ROOT: ~/www/yamdb_final
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/master'
@@ -48,8 +50,8 @@ jobs:
           username: ${{ secrets.USER }}
           passphrase: ${{ secrets.PASSPHRASE }}
           key: ${{ secrets.SSH_KEY }}
-          source: "docker-compose.yaml, nginx/default.conf, static, media"
-          target: "~"
+          source: "docker-compose.yaml, nginx/default.conf, static, media, .env"
+          target: ${{ env.PROJECT_ROOT }}
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
