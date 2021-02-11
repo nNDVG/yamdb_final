@@ -12,7 +12,7 @@ services:
       - ./.env
 
   web:
-    image: ndvg/yamdb:latest
+    image: ndvg/yamdb_final:latest
     restart: always
     depends_on:
       - db
