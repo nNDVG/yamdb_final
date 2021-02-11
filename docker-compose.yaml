@@ -1,13 +1,9 @@
-# версия docker-compose
 version: '3.8'
 
-# имя директории для хранения данных
 volumes:
   postgres_data:
 
-# имена и описания контейнеров, которые должны быть развёрнуты
 services:
-  # описание контейнера db
   db:
     image: postgres:12.4
     volumes:
