@@ -142,8 +142,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=999),
 }
+
+STATIC_ROOT = ...
+
+MEDIA_ROOT = ...
