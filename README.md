@@ -30,7 +30,7 @@ Administrator:
 * Docker
 
 # Author
-github = https://github.com/nNDVG
-https://hub.docker.com
+github = https://github.com/nNDVG/
+https://hub.docker.com/
 
 (https://github.com/nNDVG/yamdb_final/workflows/yamdb_workflow/badge.svg)
