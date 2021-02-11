@@ -3,6 +3,7 @@ name: CI
 on: [push]
 
 jobs:
+  if: github.ref == 'refs/heads/master'
   tests:
     runs-on: ubuntu-latest
     steps:
@@ -17,6 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: tests
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
@@ -46,6 +48,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           source: "docker-compose.yaml, nginx/default.conf, static, media"
           target: ${{ env.PROJECT_ROOT }}
       - name: executing remote ssh commands to deploy
@@ -54,6 +57,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             cd ${{ env.PROJECT_ROOT }}
             sudo docker pull serg733/yamdb_final_web:latest
