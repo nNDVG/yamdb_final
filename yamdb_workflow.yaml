@@ -51,7 +51,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           key: ${{ secrets.SSH_KEY }}
           source: "docker-compose.yaml, nginx/default.conf, static, media, .env"
-          target: "project"
+          target: ${{ env.PROJECT_ROOT }}
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
@@ -60,7 +60,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /project
+            cd ${{ env.PROJECT_ROOT }}
             sudo docker pull ndvg/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
