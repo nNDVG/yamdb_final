@@ -150,6 +150,4 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=999),
 }
 
-STATIC_ROOT = ...
 
-MEDIA_ROOT = ...

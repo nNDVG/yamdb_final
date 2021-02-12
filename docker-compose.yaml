@@ -16,8 +16,14 @@ services:
     restart: always
     depends_on:
       - db
-    env_file:
+    env_file:0
       - ./.env
+    app:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      depends_on:
+        - db
 
   web_nginx:
     image: nginx:1.19.6

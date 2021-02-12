@@ -1,7 +1,7 @@
 # Description
 API for Youtube project.
 Thanks to him, you can make various requests to the project.
-All command descriptions will be on the site after the deployment of this project: http://84.201.167.45:8000/redoc/
+All command descriptions will be on the site after the deployment of this project: http://84.201.177.209:8000/redoc/
 
 # Run
 1. There is no need to pre-install anything in this project. All installations occur automatically when sent to github 
@@ -28,6 +28,8 @@ Administrator:
 * Bootstrap
 * PostgreSQL
 * Docker
+* Gunicorn
+* Nginx
 
 # Author
 github = https://github.com/nNDVG/
