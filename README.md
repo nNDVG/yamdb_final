@@ -29,8 +29,8 @@ Administrator:
 * Nginx
 
 # Author
-github = https://github.com/nNDVG
-https://hub.docker.com
+github = https://github.com/nNDVG/
+https://hub.docker.com/
 
 
 
