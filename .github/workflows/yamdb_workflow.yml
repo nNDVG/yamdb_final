@@ -50,7 +50,7 @@ jobs:
           username: ${{ secrets.USER }}
           passphrase: ${{ secrets.PASSPHRASE }}
           key: ${{ secrets.SSH_KEY }}
-          source: "docker-compose.yaml, nginx/default.conf, static, media, .env"
+          source: "docker-compose.yaml, nginx/default.conf, static, .env"
           target: ${{ env.PROJECT_ROOT }}
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
