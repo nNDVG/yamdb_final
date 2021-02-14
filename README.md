@@ -1,7 +1,7 @@
 # Description
 API for Youtube project.
 Thanks to him, you can make various requests to the project.
-All command descriptions will be on the site after the deployment of this project: http://130.193.43.113:8000/redoc/
+All command descriptions will be on the site after the deployment of this project: http://130.193.43.113/redoc/
 
 # Run
 1. There is no need to pre-install anything in this project. All installations occur automatically when sent to github.
