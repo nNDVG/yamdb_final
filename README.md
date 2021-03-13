@@ -1,7 +1,7 @@
 # Description
 API for Youtube project.
 Thanks to him, you can make various requests to the project.
-All command descriptions will be on the site after the deployment of this project: http://domen/redoc/
+All command descriptions will be on the site after the deployment of this project: http://<your_domen>/redoc/
 # Run
 ## To install on a local computer, you must:
 * Install Docker and Docker-Compose (only for linux)
