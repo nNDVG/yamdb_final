@@ -1,7 +1,10 @@
 # Description
 API for Youtube project.
-Thanks to him, you can make various requests to the project.
+Thanks to him, you can make various requests to the project. Depending on the access level, delete / add categories, genres, titles, as well as comments and reviews, as well as update them.
 All command descriptions will be on the site after the deployment of this project: http://<your_domen>/redoc/
+### What would add:
+- automatic generation of slug fields when creating objects
+
 # Run
 ## To install on a local computer, you must:
 * Install Docker and Docker-Compose (only for linux)
@@ -34,9 +37,12 @@ All command descriptions will be on the site after the deployment of this projec
 # Author
  - https://github.com/nNDVG/
  - https://hub.docker.com/u/ndvg/
+### Contacts
+ - Telegram: nNDVG
+ - Email: n.dvg@yandex.ru
 
 # Tech stack:
-* Python
+* Python3.x
 * Django
 * Django REST
 * PostgreSQL
