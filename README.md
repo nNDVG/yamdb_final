@@ -3,7 +3,7 @@ API for Youtube project.
 Thanks to him, you can make various requests to the project. Depending on the access level, delete / add categories, genres, titles, as well as comments and reviews, as well as update them.
 All command descriptions will be on the site after the deployment of this project: http://<your_domen>/redoc/
 ### What would add:
-- automatic generation of slug fields when creating objects
+- Automatic generation of slug fields when creating objects
 
 # Run
 ## To install on a local computer, you must:
